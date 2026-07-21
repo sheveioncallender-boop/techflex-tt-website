@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_techflex_root" name="TechFlex Website" sequence="75" web_icon="techflex_tt_website,static/description/icon.png"/>
+    <menuitem id="menu_techflex_requests" name="Website Requests" parent="menu_techflex_root" sequence="10"/>
+    <menuitem id="menu_techflex_content" name="Website Content" parent="menu_techflex_root" sequence="20"/>
+</odoo>
