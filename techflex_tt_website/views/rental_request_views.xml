@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_techflex_rental_request_list" model="ir.ui.view">
+        <field name="name">techflex.rental.request.list</field>
+        <field name="model">techflex.rental.request</field>
+        <field name="arch" type="xml">
+            <list decoration-info="state == 'new'" decoration-success="state == 'confirmed'">
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="company_name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="number_of_units"/>
+                <field name="rental_start_date"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_techflex_rental_request_form" model="ir.ui.view">
+        <field name="name">techflex.rental.request.form</field>
+        <field name="model">techflex.rental.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header><field name="state" widget="statusbar"/></header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group string="Contact Details">
+                            <field name="first_name"/><field name="last_name"/><field name="company_name"/>
+                            <field name="email" widget="email"/><field name="phone" widget="phone"/>
+                        </group>
+                        <group string="Rental Details">
+                            <field name="specification_level"/><field name="number_of_units"/>
+                            <field name="rental_start_date"/><field name="rental_end_date"/>
+                            <field name="rental_duration"/><field name="pickup_delivery"/>
+                            <field name="website_id"/><field name="submitted_from_website"/>
+                        </group>
+                    </group>
+                    <group string="Business Address"><field name="business_address" nolabel="1"/></group>
+                    <group string="Equipment Required" col="4">
+                        <field name="equipment_desktops"/><field name="equipment_laptops"/>
+                        <field name="equipment_tablets"/><field name="equipment_tvs"/>
+                        <field name="equipment_projectors"/><field name="equipment_printers"/>
+                        <field name="equipment_accessories"/><field name="equipment_other"/>
+                    </group>
+                    <group string="Additional Information"><field name="additional_info" nolabel="1"/></group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="action_techflex_rental_request" model="ir.actions.act_window">
+        <field name="name">Rental Requests</field><field name="res_model">techflex.rental.request</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem id="menu_techflex_rental_requests" name="Rental Requests" parent="menu_techflex_requests" action="action_techflex_rental_request" sequence="10"/>
+</odoo>

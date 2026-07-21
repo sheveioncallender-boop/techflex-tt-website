@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_techflex_rental_user,techflex.rental.request user,model_techflex_rental_request,base.group_user,1,1,1,0
+access_techflex_rental_manager,techflex.rental.request manager,model_techflex_rental_request,base.group_system,1,1,1,1
+access_techflex_contact_user,techflex.contact.request user,model_techflex_contact_request,base.group_user,1,1,1,0
+access_techflex_contact_manager,techflex.contact.request manager,model_techflex_contact_request,base.group_system,1,1,1,1
+access_techflex_team_user,techflex.team.member user,model_techflex_team_member,base.group_user,1,1,1,1
+access_techflex_location_user,techflex.location user,model_techflex_location,base.group_user,1,1,1,1
+access_techflex_spec_user,techflex.product.spec.line user,model_techflex_product_spec_line,base.group_user,1,1,1,1
+access_techflex_highlight_user,techflex.product.highlight user,model_techflex_product_highlight,base.group_user,1,1,1,1

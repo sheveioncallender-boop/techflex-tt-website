@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_techflex_team_member_list" model="ir.ui.view">
+        <field name="name">techflex.team.member.list</field><field name="model">techflex.team.member</field>
+        <field name="arch" type="xml"><list><field name="sequence" widget="handle"/><field name="image_1920" widget="image"/><field name="name"/><field name="job_title"/><field name="active"/></list></field>
+    </record>
+    <record id="view_techflex_team_member_form" model="ir.ui.view">
+        <field name="name">techflex.team.member.form</field><field name="model">techflex.team.member</field>
+        <field name="arch" type="xml"><form><sheet><group><field name="image_1920" widget="image" class="oe_avatar"/><group><field name="name"/><field name="job_title"/><field name="sequence"/><field name="active"/><field name="website_id"/></group></group><field name="short_bio"/></sheet></form></field>
+    </record>
+    <record id="action_techflex_team_member" model="ir.actions.act_window"><field name="name">Team Members</field><field name="res_model">techflex.team.member</field><field name="view_mode">list,form</field></record>
+    <menuitem id="menu_techflex_team_members" name="Team Members" parent="menu_techflex_content" action="action_techflex_team_member" sequence="10"/>
+</odoo>
