@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="techflex_shop_design" inherit_id="website_sale.products" name="TechFlex Shop Design" priority="80">
+        <xpath expr="//div[@id='wrap']" position="attributes"><attribute name="class" add="tf-shop-page" separator=" "/></xpath>
+        <xpath expr="//div[@id='o_wsale_container']" position="before">
+            <section class="tf-shop-hero">
+                <div class="tf-shop-hero-inner">
+                    <div>
+                        <p class="tf-eyebrow">SHOP TECHFLEX</p>
+                        <h1><t t-if="category"><t t-out="category.name"/>.</t><t t-else="">ALL THE TECH YOU NEED.</t><br/><em>ONE TRUSTED PLACE.</em></h1>
+                        <p>Explore our wide range of laptops, desktops, networking gear, printers, accessories and more from the world’s leading brands. Quality products, competitive prices and dependable service.</p>
+                        <div class="tf-mini-benefits"><span><i class="fa fa-shield"/> Quality Products</span><span><i class="fa fa-tags"/> Great Prices</span><span><i class="fa fa-truck"/> Fast Delivery</span><span><i class="fa fa-headphones"/> Expert Support</span></div>
+                    </div>
+                    <div class="tf-shop-hero-image"><img src="/techflex_tt_website/static/src/img/shop_hero_composite.webp" alt="TechFlex technology products"/></div>
+                </div>
+            </section>
+        </xpath>
+        <xpath expr="//div[@id='o_wsale_pager']" position="after">
+            <section class="tf-shop-trust"><div><i class="fa fa-lock"/><span><b>Secure Shopping</b><small>Shop with confidence. Your data is safe and secure with us.</small></span></div><div><i class="fa fa-truck"/><span><b>Fast Delivery</b><small>Quick and reliable delivery across Trinidad &amp; Tobago.</small></span></div><div><i class="fa fa-headphones"/><span><b>Expert Support</b><small>Our team is here to help before, during and after purchase.</small></span></div></section>
+        </xpath>
+    </template>
+
+    <template id="techflex_product_design" inherit_id="website_sale.product" name="TechFlex Product Design" priority="80">
+        <xpath expr="//div[@id='wrap']" position="attributes"><attribute name="class" add="tf-product-page" separator=" "/></xpath>
+        <xpath expr="//div[@id='wrap']" position="inside">
+            <section class="tf-product-trust"><div><i class="fa fa-shield"/><span><b>Secure Shopping</b><small>Shop with confidence. Your data is safe and secure.</small></span></div><div><i class="fa fa-truck"/><span><b>Delivery Across T&amp;T</b><small>Fast, reliable delivery nationwide.</small></span></div><div><i class="fa fa-headphones"/><span><b>Local Support</b><small>Expert advice and after-sales support.</small></span></div></section>
+            <section class="tf-product-extra tf-container" t-if="product.techflex_show_details and (product.techflex_spec_line_ids or product.techflex_highlight_line_ids or product.techflex_warranty_details)">
+                <div class="tf-product-tabs">
+                    <div class="tf-product-description"><h2>DESCRIPTION &amp; HIGHLIGHTS</h2><div t-field="product.description_ecommerce"/><ul t-if="product.techflex_highlight_line_ids" class="tf-check-list"><li t-foreach="product.techflex_highlight_line_ids" t-as="highlight" t-out="highlight.name"/></ul></div>
+                    <div class="tf-spec-table" t-if="product.techflex_spec_line_ids"><h2>TECHNICAL SPECIFICATIONS</h2><div class="tf-spec-row" t-foreach="product.techflex_spec_line_ids" t-as="spec" t-if="spec.show_on_website"><b t-out="spec.name"/><span t-out="spec.value"/></div></div>
+                </div>
+                <div class="tf-warranty-panel" t-if="product.techflex_warranty_label or product.techflex_warranty_details"><i class="fa fa-shield"/><div><h2 t-out="product.techflex_warranty_label or 'Warranty &amp; Support'"/><div t-field="product.techflex_warranty_details"/><p t-if="product.techflex_support_note"><b>Support:</b> <span t-out="product.techflex_support_note"/></p><p t-if="product.techflex_delivery_note"><b>Delivery:</b> <span t-out="product.techflex_delivery_note"/></p></div></div>
+            </section>
+            <section class="tf-cta-bar"><div><i class="fa fa-headphones"/><span><b>NEED HELP CHOOSING TECH?</b><small>Our experts are here to help you find the perfect solution.</small></span></div><a class="tf-button tf-button-orange" href="/contact-us">Talk to an Expert</a><a class="tf-button tf-button-outline-light" href="tel:+18682354919">Call Us 1-868-235-4919</a></section>
+        </xpath>
+    </template>
+</odoo>

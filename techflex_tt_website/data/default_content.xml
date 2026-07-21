@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="team_member_01" model="techflex.team.member">
+        <field name="name">Team Member 1</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">10</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_01.webp"/>
+    </record>
+    <record id="team_member_02" model="techflex.team.member">
+        <field name="name">Team Member 2</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">20</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_02.webp"/>
+    </record>
+    <record id="team_member_03" model="techflex.team.member">
+        <field name="name">Team Member 3</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">30</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_03.webp"/>
+    </record>
+    <record id="team_member_04" model="techflex.team.member">
+        <field name="name">Team Member 4</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">40</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_04.webp"/>
+    </record>
+    <record id="team_member_05" model="techflex.team.member">
+        <field name="name">Team Member 5</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">50</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_05.webp"/>
+    </record>
+    <record id="team_member_06" model="techflex.team.member">
+        <field name="name">Team Member 6</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">60</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_06.webp"/>
+    </record>
+    <record id="team_member_07" model="techflex.team.member">
+        <field name="name">Team Member 7</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">70</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_07.webp"/>
+    </record>
+    <record id="team_member_08" model="techflex.team.member">
+        <field name="name">Team Member 8</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">80</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_08.webp"/>
+    </record>
+    <record id="team_member_09" model="techflex.team.member">
+        <field name="name">Team Member 9</field>
+        <field name="job_title">Team Member</field>
+        <field name="sequence">90</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/team_09.webp"/>
+    </record>
+    <record id="location_trinidad" model="techflex.location">
+        <field name="name">Chaguanas, Trinidad</field>
+        <field name="island">trinidad</field>
+        <field name="address">#105 Penco Street, Montrose, Chaguanas, Trinidad &amp; Tobago</field>
+        <field name="phone">+1 (868) 235-4919</field>
+        <field name="email">info@techflextt.com</field>
+        <field name="business_hours">Monday–Friday: 9:00 AM–5:00 PM&#10;Saturday: 10:00 AM–2:00 PM</field>
+        <field name="map_url">https://maps.google.com</field>
+        <field name="sequence">10</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/meeting_room.webp"/>
+    </record>
+    <record id="location_tobago" model="techflex.location">
+        <field name="name">Scarborough, Tobago</field>
+        <field name="island">tobago</field>
+        <field name="address">Wilson Road, Scarborough, next to Royal Castle, Tobago</field>
+        <field name="phone">+1 (868) 235-4919</field>
+        <field name="email">info@techflextt.com</field>
+        <field name="business_hours">Monday–Friday: 9:00 AM–5:00 PM&#10;Saturday: 10:00 AM–2:00 PM</field>
+        <field name="map_url">https://maps.google.com</field>
+        <field name="sequence">20</field>
+        <field name="image_1920" type="base64" file="techflex_tt_website/static/src/img/store_floor.webp"/>
+    </record>
+</odoo>
