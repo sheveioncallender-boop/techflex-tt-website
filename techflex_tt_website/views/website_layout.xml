@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="techflex_assets" inherit_id="website.layout" name="TechFlex Direct Assets" priority="100">
+        <xpath expr="//head" position="inside">
+            <link rel="icon" type="image/png" href="/techflex_tt_website/static/description/icon.png"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Poppins:wght@400;500;600;700;800&amp;display=swap"/>
+            <link rel="stylesheet" type="text/css" href="/techflex_tt_website/static/src/css/techflex.css?v=1.2.1"/>
+            <link rel="stylesheet" type="text/css" href="/techflex_tt_website/static/src/css/techflex_fidelity.css?v=1.2.1"/>
+            <script defer="defer" type="text/javascript" src="/techflex_tt_website/static/src/js/techflex.js?v=1.2.1"></script>
+        </xpath>
+    </template>
+
+    <template id="techflex_global_header" inherit_id="website.layout" name="TechFlex Global Header" priority="110">
+        <xpath expr="//header" position="replace">
+            <header id="top" class="tf-header o_header_standard">
+                <t t-set="tf_path" t-value="request.httprequest.path"/>
+                <div class="tf-header-inner">
+                    <a class="tf-brand" href="/" aria-label="TechFlex home">
+                        <img src="/techflex_tt_website/static/src/img/techflex_logo.png" alt="TechFlex TT Limited"/>
+                    </a>
+                    <nav class="tf-desktop-nav" aria-label="Primary navigation">
+                        <a t-att-class="'active' if tf_path == '/' else ''" href="/">Home</a>
+                        <a t-att-class="'active' if tf_path.startswith('/shop') else ''" href="/shop">Shop</a>
+                        <a t-att-class="'active' if tf_path.startswith('/rentals') else ''" href="/rentals">Rentals</a>
+                        <a t-att-class="'active' if tf_path.startswith('/about-us') else ''" href="/about-us">About</a>
+                        <a t-att-class="'active' if tf_path.startswith('/contact-us') else ''" href="/contact-us">Contact</a>
+                    </nav>
+                    <div class="tf-header-actions">
+                        <button class="tf-icon-button tf-search-toggle" type="button" aria-label="Search products"><i class="fa fa-search"/></button>
+                        <a class="tf-icon-button" href="/my" aria-label="My account"><i class="fa fa-user-o"/></a>
+                        <t t-set="tf_cart_quantity" t-value="request.session.get('website_sale_cart_quantity', request.cart.cart_quantity) or 0"/>
+                        <a class="tf-icon-button tf-cart-link" href="/shop/cart" aria-label="Shopping cart">
+                            <i class="fa fa-shopping-cart"/>
+                            <sup t-attf-class="tf-cart-badge my_cart_quantity #{'d-none' if tf_cart_quantity == 0 else ''}"
+                                 t-out="tf_cart_quantity"
+                                 t-att-data-order-id="request.session.get('sale_order_id', None) if tf_cart_quantity else None"/>
+                        </a>
+                        <a class="tf-button tf-button-orange tf-header-shop" href="/shop">Shop Now</a>
+                        <button class="tf-mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span/><span/><span/></button>
+                    </div>
+                </div>
+                <div class="tf-search-panel">
+                    <form action="/shop" method="get">
+                        <input type="search" name="search" placeholder="Search products, categories and brands..." aria-label="Search products"/>
+                        <button type="submit"><i class="fa fa-search"/> Search</button>
+                    </form>
+                </div>
+                <nav class="tf-mobile-nav" aria-label="Mobile navigation">
+                    <a href="/">Home</a><a href="/shop">Shop</a><a href="/rentals">Rentals</a><a href="/about-us">About</a><a href="/contact-us">Contact</a>
+                    <a href="/my">My Account</a><a href="/shop/cart">Cart</a>
+                </nav>
+            </header>
+        </xpath>
+    </template>
+
+    <template id="techflex_global_footer" inherit_id="website.layout" name="TechFlex Global Footer" priority="110">
+        <xpath expr="//footer" position="replace">
+            <footer class="tf-footer">
+                <div class="tf-footer-main">
+                    <div class="tf-footer-brand">
+                        <img src="/techflex_tt_website/static/src/img/techflex_logo.png" alt="TechFlex TT Limited"/>
+                        <p>Affordable technology and exceptional service for customers across Trinidad &amp; Tobago.</p>
+                        <div class="tf-socials"><a href="https://www.facebook.com/TechFlexTT/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"/></a><a href="https://www.instagram.com/techflexttltd/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"/></a><a href="https://www.tiktok.com/@techflexttltd" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa fa-music"/></a><a href="https://www.linkedin.com/company/techflextt/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"/></a></div>
+                    </div>
+                    <div><h5>Quick Links</h5><a href="/">Home</a><a href="/about-us">About Us</a><a href="/contact-us">Contact Us</a><a href="/rentals">Rentals</a></div>
+                    <div><h5>Shop</h5><a href="/shop">All Products</a><a href="/shop">Laptops</a><a href="/shop">Desktops</a><a href="/shop">Printers</a><a href="/shop">Accessories</a></div>
+                    <div><h5>Customer Care</h5><a href="/contact-us">Support</a><a href="/contact-us">Shipping &amp; Delivery</a><a href="/contact-us">Returns &amp; Warranty</a><a href="/my">My Account</a></div>
+                    <div><h5>Contact Us</h5><p><i class="fa fa-phone"/> +1 (868) 235-4919</p><p><i class="fa fa-envelope"/> info@techflextt.com</p><p><i class="fa fa-map-marker"/> Chaguanas, Trinidad &amp; Scarborough, Tobago</p></div>
+                </div>
+                <div class="tf-footer-bottom"><span>© 2026 TechFlex TT Limited. All Rights Reserved.</span><span>Visa &#160; Mastercard &#160; American Express</span></div>
+            </footer>
+        </xpath>
+    </template>
+</odoo>
